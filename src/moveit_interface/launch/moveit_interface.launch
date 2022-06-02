@@ -1,0 +1,6 @@
+<launch>
+
+    <!-- MOVEIT IMPLEMENTATION -->
+    <node pkg="moveit_interface" type="moveit_interface" name="moveit_interface" output="screen"/>
+
+</launch>

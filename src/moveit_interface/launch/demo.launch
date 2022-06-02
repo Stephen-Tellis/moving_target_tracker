@@ -1,0 +1,30 @@
+<launch>
+
+    <!-- Params are here --> 
+    <param name="/primary_planner" value="manipulator[PRM]" type="str"/>
+    <param name="/vel_scale" value="1" type="double"/>
+    <param name="/acc_scale" value="1" type="double"/>
+    <param name="/goal_joint_tol" value="0.01" type="double"/>
+    <param name="/tip_link" value="wrist_3_link" type="str" />
+
+    <!-- Simulated moving targets -->
+    <include file="$(find poses_broadcaster)/launch/poses_broadcaster_simulated.launch" />
+
+    <!-- MOVE GROUP -->
+    <include file="$(find ur10e_moveit_config)/launch/ur10e_moveit_planning_execution.launch" >
+        <arg name="sim" value="true"/>
+    </include>
+
+    <!-- Moveit Interface -->
+    <!-- <node pkg="moveit_interface" type="moving_targets_interface.py" name="moveit_interface" output="screen"/> -->
+
+    <!-- RVIZ -->
+    <include file="$(find ur10e_moveit_config)/launch/moveit_rviz.launch" >    
+        <arg name="rviz_config" value="$(find ur10e_moveit_config)/launch/moveit.rviz"/>
+    </include>
+
+    <!-- moveit servo -->
+    <include file="$(find moveit_servo)/launch/spacenav_cpp.launch" />
+
+
+</launch>

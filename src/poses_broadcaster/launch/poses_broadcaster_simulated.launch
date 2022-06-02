@@ -1,0 +1,6 @@
+  <launch>
+  
+    <!-- Broadcasts the TFs -->
+    <node name="poses_broadcaster" pkg="poses_broadcaster" type="poses_simulated_broadcaster_node.py" output="screen" />
+
+  </launch>

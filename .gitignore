@@ -1,3 +1,7 @@
+# VsCode
+**/.vscode
+
+# ROS
 devel/
 logs/
 build/
