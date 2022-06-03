@@ -1,6 +1,6 @@
 # Real-time target position tracking
 
-Enables switching between trajectory execution and real-time servo control to track a moving target. 
+Enables switching between trajectory execution and real-time servo control to track a moving target. Target tracking is enabled by a custom PID controller.  
 
 ![](assets/demo.gif)   
 
